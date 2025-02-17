@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARAMET - Mieszalnia Farb i Lakierów</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            width: 80px; /* Dostosuj rozmiar logo */
+            height: auto;
+            margin-right: 15px;
+            border-radius: 10px; /* Zaokrąglone rogi */
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .cart {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form select, form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-info {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .map-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        iframe {
+            border: 0;
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.ibb.co/7s9GVhp/IMG-5370.jpg" alt="Logo ARAMET" class="logo">
+        <h1>ARAMET - Mieszalnia Farb i Lakierów</h1>
+    </header>
+
+    <nav>
+        <a href="#strona-glowna">Strona Główna</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#koloryzacja">Koloryzacja Lakierów</a>
+        <a href="#koszyk">Koszyk</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="container">
+        <section id="strona-glowna">
+            <h2>Witamy w ARAMET!</h2>
+            <p>Jesteśmy firmą ze Śląska specjalizującą się w doborze lakierów do samochodów. Posiadamy spory asortyment farb przemysłowych i narzędzi. Zapraszamy do kontaktu i składania zamówień!</p>
+            <div class="contact-info">
+                <p><strong>Adres:</strong> Turza Śląska, ul. Bogumińska 32</p>
+                <p><strong>Telefon:</strong> 665 558 896</p>
+            </div>
+            <div class="map-container">
+                <h3>Znajdź nas na mapie:</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.123456789012!2d18.12345678901234!3d50.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA3JzI0LjQiTiAxOMKwMDcnMjQuNCJF!5e0!3m2!1spl!2spl!4v1691234567890!5m2!1spl!2spl"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="oferta">
+            <h2>Oferta</h2>
+            <div class="product">
+                <h3>Farba emulsyjna</h3>
+                <img src="https://via.placeholder.com/300" alt="Farba emulsyjna">
+                <p>Cena: 50 zł</p>
+                <button onclick="addToCart('Farba emulsyjna', 50)">Dodaj do koszyka</button>
+            </div>
+            <div class="product">
+                <h3>Lakier do drewna</h3>
+                <img src="https://via.placeholder.com/300" alt="Lakier do drewna">
+                <p>Cena: 70 zł</p>
+                <button onclick="addToCart('Lakier do drewna', 70)">Dodaj do koszyka</button>
+            </div>
+            <div class="product">
+                <h3>Farba olejna</h3>
+                <img src="https://via.placeholder.com/300" alt="Farba olejna">
+                <p>Cena: 90 zł</p>
+                <button onclick="addToCart('Farba olejna', 90)">Dodaj do koszyka</button>
+            </div>
+        </section>
+
+        <section id="koloryzacja">
+            <h2>Koloryzacja Lakierów Samochodowych</h2>
+            <p>Oferujemy profesjonalną koloryzację lakierów samochodowych wysyłkowo. Podaj markę, model i rocznik swojego samochodu, a my przygotujemy lakier zgodnie z oryginalną kolorystyką.</p>
+            <form id="colorization-form">
+                <label for="car-brand">Marka samochodu:</label>
+                <input type="text" id="car-brand" name="car-brand" placeholder="Np. Toyota" required>
+
+                <label for="car-model">Model samochodu:</label>
+                <input type="text" id="car-model" name="car-model" placeholder="Np. Corolla" required>
+
+                <label for="car-year">Rocznik samochodu:</label>
+                <input type="number" id="car-year" name="car-year" placeholder="Np. 2015" min="1900" max="2025" required>
+
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" placeholder="Imię i nazwisko" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                <label for="address">Adres wysyłki:</label>
+                <input type="text" id="address" name="address" placeholder="Adres wysyłki" required>
+
+                <label for="notes">Dodatkowe uwagi:</label>
+                <textarea id="notes" name="notes" placeholder="Dodatkowe uwagi" rows="5"></textarea>
+
+                <button type="submit">Zamów koloryzację</button>
+            </form>
+        </section>
+
+        <section id="koszyk">
+            <h2>Koszyk</h2>
+            <div class="cart">
+                <ul id="cart-items"></ul>
+                <p>Suma: <span id="cart-total">0</span> zł</p>
+                <button onclick="checkout()">Złóż zamówienie</button>
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Imię i nazwisko" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Wiadomość" rows="5" required></textarea>
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 ARAMET - Mieszalnia Farb i Lakierów. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        // Funkcja dodająca produkt do koszyka
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            total += price;
+            updateCart();
+        }
+
+        // Funkcja aktualizująca koszyk
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ${item.price} zł`;
+                cartItems.appendChild(li);
+            });
+            cartTotal.textContent = total;
+        }
+
+        // Funkcja do składania zamówienia
+        function checkout() {
+            const shippingMethod = prompt("Wybierz metodę wysyłki: 1 - InPost Paczkomat, 2 - InPost Kurier");
+            if (shippingMethod === "1") {
+                alert("Wybrano wysyłkę InPost Paczkomat. Dziękujemy za zakupy!");
+            } else if (shippingMethod === "2") {
+                alert("Wybrano wysyłkę InPost Kurier. Dziękujemy za zakupy!");
+            } else {
+                alert("Nie wybrano metody wysyłki.");
+            }
+            cart = [];
+            total = 0;
+            updateCart();
+        }
+
+        // Obsługa formularza koloryzacji
+        document.getElementById('colorization-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const carBrand = this.elements['car-brand'].value;
+            const carModel = this.elements['car-model'].value;
+            const carYear = this.elements['car-year'].value;
+            const name = this.elements['name'].value;
+            const email = this.elements['email'].value;
+            const address = this.elements['address'].value;
+            const notes = this.elements['notes'].value;
+
+            alert(`Dziękujemy za zamówienie koloryzacji!\nMarka: ${carBrand}\nModel: ${carModel}\nRocznik: ${carYear}\nImię i nazwisko: ${name}\nEmail: ${email}\nAdres: ${address}\nUwagi: ${notes}`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
